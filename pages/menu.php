@@ -6,7 +6,7 @@ date_default_timezone_set("America/Guayaquil");
 
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="navbar-header">
-        <a class="navbar-brand" href="index.php">Proyecto 9c</a>
+        <a class="navbar-brand" href="index.php">Mango Production</a>
     </div>
 
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -195,7 +195,7 @@ date_default_timezone_set("America/Guayaquil");
                 </li>
 
                 <li>
-                    <a href="../index.php"><i class="fa fa-close fa-fw"></i> Cerrar Sesión</a>
+                    <a href="../pages/login.php"><i class="fa fa-close fa-fw"></i> Cerrar Sesión</a>
                 </li>
             </ul>
         </div>
