@@ -1,22 +1,30 @@
 <?php
+session_start();
 include("../bd/conexion.php");
 $db = DataBase::connect();
 date_default_timezone_set("America/Guayaquil");
 
+$usu = $_POST["Nusu"];
+$contra = $_POST["Ncontra"];
 
-$usuario = $_POST['Nusuario'];
-$pass = $_POST['contraseña'];
+$consulta = "select * from usuario where nomb_usuario='$usu' and contraseña='$contra'";
+$resultado = mysqli_query($db,$consulta);
 
-$band = false;
-
-$sentencia = "select * from usuario where estado=1 and nomb_usuario='$usuario' 
-            and contraseña='$pass'";
-$respuesta = $db->query($sentencia);
-while($fila = $respuesta->fetch_array()){
-    $band = true;
+$filas=mysqli_num_rows($resultado);
+if ($filas) {
+    header("location:index.php");
+} else {
+    ?>
+    <?php
+    include("login.php");
+    ?>
+    <div class="alert alert-danger">
+        <b>ERROR EN LA AUTENTIFICACIÓN</b>
+    </div>
+ 
+    <?php
 }
+mysqli_free_result($resultado);
+mysqli_close($db);
 
-if ($band) header("location:index.php");
-else header("location:login.php");
 
-?>

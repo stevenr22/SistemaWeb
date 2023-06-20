@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -28,44 +27,42 @@
 
 </head>
 <body>
-    <div class="container">
+<div class="container">
 
-        <div id="login" class="col-lg-4 offset-lg-8 col-md-6 offset-md-3col-12">
-            <div class="header">
-                <img src="../img/usuario.png">
-                <h1><b>Iniciar</b></h1>
-              </div>
-       
-            
-            <form method="post">
-                <div class="form-group">
-                    <label for="Nusuario"><b>Usuario:</b> </label>
-                    <input id="Nusuario" name="Nusuario" class="form-control" type="text" placeholder="Ingrese su usuario">
-                </div>
-                <div class="contraseña">
-                    <label for="contraseña"><b>Contraseña:</b> </label>
-                    <input id="contraseña" class="form-control" type="password" placeholder="Ingrese su contraseña">
-                </div><br>
-                <div class="checkbox">
-                    <label>
-                        <input name="remember" type="checkbox" value="Remember Me">Recuerdame
-                    </label>
-                </div>
+<div id="login" class="col-lg-4 offset-lg-8 col-md-6 offset-md-3col-12">
+    <div class="header">
+        <img src="../img/usuario.png">
+        <h1><b>Iniciar Sesión</b></h1>
+        
+      </div>
 
-                <!--FALTA VALIDAR-->
-                <a id="sin_linea" href="../pages/index.php">
-                    <button type="button"  class="btn btn-success mb-2">INICIAR SESIÓN</button>
-                </a>
-                
-                <a id="efecto" href="../pages/registro.html">
-                    <p style="font-family: Arial, Helvetica, sans-serif;"><b>No tiene cuenta? Registrate</b></p>
-                </a>
-               
-
-            </form>
+    
+    <form method="post" action="revisarlogin.php">
+        <div class="form-group">
+            <label for="usuario"><b>Usuario:</b> </label>
+            <input id="usuario" name="Nusu" class="form-control" type="text" placeholder="Ingrese su usuario">
         </div>
-    </div>
+        <div class="contraseña">
+            <label for="contraseña"><b>Contraseña:</b> </label>
+            <input id="contraseña" name="Ncontra" class="form-control" type="password" placeholder="Ingrese su contraseña">
+        </div><br>
+        <div class="checkbox">
+            <label>
+                <input name="remember" type="checkbox" value="Remember Me">Recuerdame
+            </label>
+        </div>
+     
+        <button type="submit" class="btn btn-success mb-2">Iniciar</button>
+       
+        
+        <a id="efecto" href="../pages/registro.html">
+            <p style="font-family: Arial, Helvetica, sans-serif;"><b>No tiene cuenta? Registrar</b></p>
+        </a>
+       
 
+    </form>
+</div>
+</div>
     
 
 </body>
