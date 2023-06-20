@@ -1,41 +1,55 @@
 
 
 .container {
-    font-family: Arial, Helvetica, sans-serif;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  background-image: url(../img/fondo.jpg);
+  opacity: 20px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
 
-    display: grid;
-    place-items: center;
-    width: 100%;
-    height: 100vh;
-  }
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100vh;
+}
+.card{
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.048),rgba(255,255,255,0));
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255,2555,255,0.18);
+  box-shadow: 0 8px 32px rgba(139, 127, 127, 0.37);
+}
 .header {
-    text-align: center;
+  text-align: center;
 }
   
 .header img {
-    max-width: 30%;
-    border-radius: 10%;
-    height: auto;
-    margin-bottom: 20px;
+  max-width: 30%;
+  border-radius: 10%;
+  height: auto;
+  margin-bottom: 20px;
 }
   
 
 #efecto{
-    color: #000;
-  }
+  color: #000;
+}
   a:link{
-    text-decoration: none;
-  }
+  text-decoration: none;
+}
 #efecto:hover:hover {
-    color:rgb(0, 153, 153);
-    cursor: pointer;
+  color:rgb(0, 153, 153);
+  cursor: pointer;
 }
 
 #sin_linea{
-    text-decoration:solid;
+  text-decoration:solid;
 }

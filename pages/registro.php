@@ -9,9 +9,9 @@
         <meta name="author" content="">
 
         <title>Registrar</title>
-
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/style.css" rel="stylesheet">
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        
 
         <link href="../css/metisMenu.min.css" rel="stylesheet">
         <link href="../css/startmin.css" rel="stylesheet">
@@ -23,14 +23,14 @@
         <script src="../js/startmin.js"></script>
 
         <link rel="icon" href="../img/mango-and-lef-png.ico" type="image/ico" />
-        <link rel="stylesheet" href="../css/style.css">
+       
 
 
 </head>
 <body>
     <div class="container">
 
-        <div id="login" class="col-lg-4 offset-lg-8 col-md-6 offset-md-3col-12">
+        <div class="card col-lg-3">
             <div class="header">
                 <img src="../img/usuario.png">
                 <h1><b>Registrar</b></h1>
@@ -55,8 +55,9 @@
                     <button type="submit"  class="btn btn-success mb-2">Registrar</button>
                 </a>
                 
+                <br> 
                 <a id="efecto" href="../pages/login.php">
-                    <p style="font-family: Arial, Helvetica, sans-serif;"><b>Tiene cuenta? Inicia</b></p>
+                    <b>Tiene cuenta? Inicia</b>
                 </a>
                
 
