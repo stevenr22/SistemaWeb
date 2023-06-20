@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Login</title>
+        <title>Iniciar sesión</title>
 
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/style.css" rel="stylesheet">
@@ -51,6 +51,8 @@
                         <input name="remember" type="checkbox" value="Remember Me">Recuerdame
                     </label>
                 </div>
+
+                <!--FALTA VALIDAR-->
                 <a id="sin_linea" href="../pages/index.php">
                     <button type="button"  class="btn btn-success mb-2">INICIAR SESIÓN</button>
                 </a>
