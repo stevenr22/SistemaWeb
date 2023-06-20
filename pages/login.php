@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Iniciar sesión</title>
+        <title>Iniciar</title>
 
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/style.css">
@@ -33,7 +33,7 @@
         <div class="card col-lg-3">
             <div class="header">
                 <img src="../img/usuario.png">
-                <h1><b>Iniciar Sesión</b></h1>
+                <h1><b>Iniciar sesión</b></h1>
             </div>
             <form method="post" action="revisarlogin.php">
                 <div class="form-group">
