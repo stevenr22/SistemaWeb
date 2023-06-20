@@ -9,8 +9,8 @@
         <meta name="author" content="">
 
         <title>Registrar</title>
-        <link href="../css/style.css" rel="stylesheet">
         <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
         
 
         <link href="../css/metisMenu.min.css" rel="stylesheet">
@@ -35,8 +35,7 @@
                 <img src="../img/usuario.png">
                 <h1><b>Registrar</b></h1>
               </div>
-       
-            
+
             <form method="post">
                 <div class="form-group">
                     <label for="Nusuario"><b>Usuario:</b> </label>
@@ -45,7 +44,7 @@
                 <div class="contraseña">
                     <label for="contraseña"><b>Contraseña:</b> </label>
                     <input id="contraseña" class="form-control" type="password" placeholder="Ingrese su contraseña">
-                </div><br>
+                </div>
                 <div class="checkbox">
                     <label>
                         <input name="remember" type="checkbox" value="Remember Me">Recuerdame

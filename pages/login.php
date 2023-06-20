@@ -27,38 +27,39 @@
 
 </head>
 <body>
-<div class="container">
+    
+    <div class="container">
 
-    <div class="card col-lg-3">
-        <div class="header">
-            <img src="../img/usuario.png">
-            <h1><b>Iniciar Sesión</b></h1>
+        <div class="card col-lg-3">
+            <div class="header">
+                <img src="../img/usuario.png">
+                <h1><b>Iniciar Sesión</b></h1>
+            </div>
+            <form method="post" action="revisarlogin.php">
+                <div class="form-group">
+                    <label for="usuario"><b>Usuario:</b> </label>
+                    <input id="usuario" name="Nusu" class="form-control" type="text" placeholder="Ingrese su usuario">
+                </div>
+                <div class="contraseña">
+                    <label for="contraseña"><b>Contraseña:</b> </label>
+                    <input id="contraseña" name="Ncontra" class="form-control" type="password" placeholder="Ingrese su contraseña">
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input name="remember" type="checkbox" value="Remember Me">Recuerdame
+                    </label>
+                </div>
+            
+                <button type="submit" class="btn btn-success mb-2">Iniciar</button>
+                <br> 
+                <a id="efecto" href="../pages/registro.php">
+                    <b>No tiene cuenta? Registrate</b>
+                </a>
+            
+
+            </form>
         </div>
-        <form method="post" action="revisarlogin.php">
-            <div class="form-group">
-                <label for="usuario"><b>Usuario:</b> </label>
-                <input id="usuario" name="Nusu" class="form-control" type="text" placeholder="Ingrese su usuario">
-            </div>
-            <div class="contraseña">
-                <label for="contraseña"><b>Contraseña:</b> </label>
-                <input id="contraseña" name="Ncontra" class="form-control" type="password" placeholder="Ingrese su contraseña">
-            </div>
-            <div class="checkbox">
-                <label>
-                    <input name="remember" type="checkbox" value="Remember Me">Recuerdame
-                </label>
-            </div>
-        
-            <button type="submit" class="btn btn-success mb-2">Iniciar</button>
-            <br> 
-            <a id="efecto" href="../pages/registro.php">
-                <b>No tiene cuenta? Registrate</b>
-            </a>
-        
-
-        </form>
     </div>
-</div>
     
 
 </body>
