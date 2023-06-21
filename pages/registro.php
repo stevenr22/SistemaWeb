@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -36,23 +35,31 @@
                 <h1><b>Registrar</b></h1>
               </div>
 
-            <form method="post">
+            <form method="post" action="validarregistro.php">
                 <div class="form-group">
                     <label for="Nusuario"><b>Usuario:</b> </label>
-                    <input id="Nusuario" name="Nusuario" class="form-control" type="text" placeholder="Ingrese su usuario">
+                    <input id="usuario" name="Nusu" class="form-control" type="text" placeholder="Ingrese su usuario">
                 </div>
-                <div class="contraseña">
+                <div class="form-group">
                     <label for="contraseña"><b>Contraseña:</b> </label>
-                    <input id="contraseña" class="form-control" type="password" placeholder="Ingrese su contraseña">
+                    <input id="contraseña" name="Ncontra" class="form-control" type="password" placeholder="Ingrese su contraseña">
+                </div>
+                <div class="form-group">
+                    <label for="nombre"><b>Nombres:</b> </label>
+                    <input id="nombre" name="Nnombre" class="form-control" type="text" placeholder="Ingrese sus nombres">
+                </div>
+                <div class="form-group">
+                    <label for="apellido"><b>Apellidos:</b> </label>
+                    <input id="apellido" name="Napellido" class="form-control" type="text" placeholder="Ingrese sus apellidos">
                 </div>
                 <div class="checkbox">
                     <label>
                         <input name="remember" type="checkbox" value="Remember Me">Recuerdame
                     </label>
                 </div>
-                <a id="sin_linea" href="#">
-                    <button type="submit"  class="btn btn-success mb-2">Registrar</button>
-                </a>
+                
+                <button type="submit" name="btnregistro"  class="btn btn-success mb-2">Registrar</button>
+                
                 
                 <br> 
                 <a id="efecto" href="../pages/login.php">
@@ -65,6 +72,6 @@
     </div>
 
     
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

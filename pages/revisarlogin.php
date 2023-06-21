@@ -18,9 +18,12 @@ if ($filas) {
     <?php
     include("login.php");
     ?>
-    <div class="alert alert-danger">
-        <b>ERROR EN LA AUTENTIFICACIÓN</b>
-    </div>
+    <script>
+        Swal.fire({
+        title: "Datos incorrectos!",
+        icon: 'error'
+    })
+    </script>
  
     <?php
 }
