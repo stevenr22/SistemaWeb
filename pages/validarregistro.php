@@ -1,51 +1,54 @@
 <?php
 include("../bd/conexion.php");
-if (isset($_POST["btnregistro"])) {
-    if (
-        strlen($_POST["Nusu"]) >= 1 && 
-        strlen($_POST["Ncontra"]) >= 1
-        
-        ) {
-            $usu= trim($_POST['Nusu']);
-            $contra= trim($_POST['Ncontra']);
-            $consulta = "insert into usuario(nomb_usuario,contraseña)
-            VALUES ('$usu','$contra')";
+$db = DataBase::connect();
+date_default_timezone_set("America/Guayaquil");
 
-            $resultado = mysqli_query($connect,$consulta);
-            if ($resultado) {
+if (isset($_POST["btnregistro"])){
+    if (strlen($_POST["Nusu"])>=1 && 
+        strlen($_POST["Ncontra"])>=1 && 
+        strlen($_POST["Nnombre"])>=1 && 
+        strlen($_POST["Napellido"])>=1){
+        
+        $usu = trim($_POST["Nusu"]);
+        $contra = trim($_POST["Ncontra"]);
+        $nomb = trim($_POST["Nnombre"]);
+        $ape = trim($_POST["Napellido"]);
+
+        $consulta = "INSERT INTO usuario(nomb_usuario, contraseña, nombre, apellido) 
+        VALUES ('$usu','$contra','$nomb','$ape')";
+
+        $resultado = mysqli_query($db,$consulta);
+        if ($resultado) {
+            ?>
+                <script>
+                    Swal.fire({
+                        title: 'REGISTRO EXITOSO!',
+                        icon: 'success'
+                    })   
+                </script>
+            <?php
+        } else {
             ?>
             <script>
                 Swal.fire({
-                title: "REGISTRO EXITOSO!",
-                icon: "success"
-                })
+                    title: 'UPS HA OCURRIDO UN ERROR..!',
+                    icon: 'error'
+                })   
             </script>
-            <?php
-            } else {
-                ?>
-                <script>
-                    Swal.fire({
-                    title: "OCURRIO UN ERROR",
-                    icon: "error"
-                })
-            </script>
-                <?php
-            }
-        }else{
-            ?>
-            <script>
-                    Swal.fire({
-                    title: "LLENA TODOS LOS CAMPOS",
-                    icon: "warning"
-                })
-            </script>
-            <?php
+        <?php
         }
-            
-
-            
+        
+    }else{
+        ?>
+        <script>
+            Swal.fire({
+                title: 'POR FAVOR COMPLETE LOS CAMPOS',
+                icon: 'warning'
+            })   
+        </script>
+        <?php
     }
-    
+}
 
 
-?> 
+?>

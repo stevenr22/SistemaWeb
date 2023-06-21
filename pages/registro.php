@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -22,9 +23,6 @@
         <script src="../js/startmin.js"></script>
 
         <link rel="icon" href="../img/mango-and-lef-png.ico" type="image/ico" />
-       
-
-
 </head>
 <body>
     <div class="container">
@@ -34,7 +32,7 @@
                 <img src="../img/usuario.png">
                 <h1><b>Registrar</b></h1>
               </div>
-
+           
             <form method="post" action="validarregistro.php">
                 <div class="form-group">
                     <label for="Nusuario"><b>Usuario:</b> </label>
@@ -58,16 +56,17 @@
                     </label>
                 </div>
                 
-                <button type="submit" name="btnregistro"  class="btn btn-success mb-2">Registrar</button>
+                <button type="submit" name="btnregistro" class="btn btn-success mb-2">Registrar</button>
                 
                 
                 <br> 
                 <a id="efecto" href="../pages/login.php">
                     <b>Tiene cuenta? Inicia</b>
                 </a>
-               
-
             </form>
+            <?php
+            include("validarregistro.php");
+            ?>
         </div>
     </div>
 
