@@ -122,7 +122,15 @@ date_default_timezone_set("America/Guayaquil");
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="empleado.php"><i class="fa fa-user fa-fw"></i> Empleado</a>
+                    <a href="#"><i class="fa fa-user fa-fw"></i> Usuarios <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="empleado.php"> Empleados</a>
+                        </li>
+                        <li>
+                            <a href="roles.php">Roles</a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
                     <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>

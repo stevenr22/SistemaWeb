@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Empleados</title>
+        <title>Roles</title>
         <?php include("partials/head.php"); ?>
     </head>
     <body>
@@ -15,94 +15,16 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1 class="page-header">Empleado</h1>
+                            <h1 class="page-header">Roles</h1>
                         </div>
                         <!-- /.col-lg-12 -->
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="panel panel-success">
-                                <div class="panel-heading">
-                                    Basic Form Elements
-                                </div>
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <form role="form" method="post" action="guardaris.php" id="formito">
-
-                                                <div class="form-group">
-                                                    <label>Nombre</label>
-                                                    <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre y el apellido">
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label>Cédula</label>
-                                                    <input class="form-control" type="text" name="ced" id="ced" placeholder="Ingrese cédula">
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label>Correo</label>
-                                                    <input class="form-control" type="email" name="correo" id="correo" placeholder="Ingrese el correo">
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label>Dirección</label>
-                                                    <input class="form-control" type="text" name="dir" id="dir" placeholder="Ingrese la dirección">
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label>Ciudad</label>
-                                                    <select class="form-control" name="ciudad" id="ciudad">
-                                                        <option value="1">GYE</option>
-                                                        <option value="2">UIO</option>
-                                                        <option value="3">CUM</option>
-                                                        <option value="4">ESM</option>
-                                                        <option value="5">MAN</option>
-                                                    </select>
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Usuario</label>
-                                                            <input class="form-control" type="text" name="usu" id="usu" placeholder="Ingrese el usuario">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Contraseña</label>
-                                                            <input class="form-control" type="password" name="pass" id="pass" placeholder="Ingrese la contraseña">
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <button type="submit" class="btn btn-success">Guardar Registro</button>
-                                                <button type="reset" class="btn btn-info">Limpiar Datos</button>
-                                            </form>
-                                        </div>
-                                        <!-- /.col-lg-6 (nested) -->
-
-
-                                    </div>
-                                    <!-- /.row (nested) -->
-                                </div>
-                                <!-- /.panel-body -->
-                            </div>
-                            <!-- /.panel -->
-                        </div>
-                        <!-- /.col-lg-12 -->
-                    </div>
-
-
-
+                    </div>     
                     <!-- /.row -->
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="panel panel-danger">
+                            <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    Empleados registrados
+                                    Empleados 
                                 </div>
                                 <!-- /.panel-heading -->
                                 <div class="panel-body">
@@ -110,32 +32,20 @@
                                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                             <thead class="bg-warning">
                                                 <tr>
-                                                    <th>Nombre</th>
-                                                    <th>Cédula</th>
-                                                    <th>Correo</th>
-                                                    <th>Fecha Nacimiento</th>
+                                                    <th>#</th>
+                                                    <th>Rol</th>
+                                                    <th>Descripción</th>
                                                     <th>Acciones</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            <?php
-                                            $sentencia = "select * from empleado where estado=1";
-                                            $respuesta = $db->query($sentencia);
-                                            while($arreglo = $respuesta->fetch_array()){
-                                            ?>
+                                            
 
                                                 <tr class="odd gradeX">
-                                                    <td><?php echo $arreglo['nombre'] ?></td>
-                                                    <td><?php echo $arreglo['cedula'] ?></td>
-                                                    <td><?php echo $arreglo['correo'] ?></td>
-                                                    <td class="center"><?php echo $arreglo['fecha_nac'] ?></td>
-                                                    <td class="center">
-                                                        <button type="button" class="btn btn-warning" onclick="modalcito_aparece('<?php echo $arreglo['emp_id']; ?>','<?php echo $arreglo['nombre']; ?>','<?php echo $arreglo['cedula']; ?>', '<?php echo $arreglo['correo']; ?>', '<?php echo $arreglo['fecha_nac']; ?>')">ACTUALIZAR</button>
-                                                        <button type="button" class="btn btn-danger" onclick="eliminar('<?php echo $arreglo['emp_id']; ?>')">ELIMINAR</button>
-                                                    </td>
+                                                    
                                                 </tr>
 
-                                            <?php } ?>
+                                            
 
                                             </tbody>
                                         </table>
@@ -150,7 +60,42 @@
                         <!-- /.col-lg-12 -->
                     </div>
                     <!-- /.row -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    Registar rol
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <form role="form" method="post" action="CreateRol.php" id="rol">
 
+                                                <div class="form-group">
+                                                    <label>Rol</label>
+                                                    <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Descripcion</label>
+                                                    <input class="form-control" type="text" name="des" id="des" placeholder="Ingrese brebe descripción">
+                                                </div>
+                                                <button type="submit" class="btn btn-success"> <i class="fa fa-paper-plane"></i> Guardar</button>
+                                                
+                                            </form>
+                                        </div>
+                                        <!-- /.col-lg-6 (nested) -->
+
+
+                                    </div>
+                                    <!-- /.row (nested) -->
+                                </div>
+                                <!-- /.panel-body -->
+                            </div>
+                            <!-- /.panel -->
+                        </div>
+                        <!-- /.col-lg-12 -->
+                    </div>
                 </div>
                 <!-- /.container-fluid -->
             </div>
