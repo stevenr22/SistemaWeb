@@ -20,6 +20,7 @@
         <script src="../js/bootstrap.min.js"></script>
         <script src="../js/metisMenu.min.js"></script>
         <script src="../js/startmin.js"></script>
+        <script src="https://kit.fontawesome.com/0adef27e98.js" crossorigin="anonymous"></script>
 
         <link rel="icon" href="../img/mango-and-lef-png.ico" type="image/ico" />
         
@@ -43,8 +44,8 @@
                 <div class="contraseña">
                     <label for="contraseña"><b>Contraseña:</b> </label>
                     <div class="box-eye">
-                        <button type="button">
-                            <i class="fa-solid fa-eye"></i>
+                        <button type="button" onclick="mostrarcontraseña('contraseña','eyecontra')">
+                            <i id="eyecontra" class="fa-solid fa-eye changecontra"></i>
                         </button>
                     </div>
                     <input id="contraseña" name="Ncontra" class="form-control" type="password" placeholder="Ingrese su contraseña">
@@ -67,5 +68,6 @@
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/misvalidaciones.js"></script>
 </body>
 </html>

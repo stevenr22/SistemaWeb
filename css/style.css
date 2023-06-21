@@ -51,3 +51,18 @@
 #sin_linea{
   text-decoration:solid;
 }
+
+.box-eye{
+  position: relative;
+
+}
+.box-eye button{
+  border: none;
+  position: absolute;
+}
+.changecontra{
+  position: absolute;
+  top: 12px;
+  left: 260px;
+  cursor: pointer;
+}
