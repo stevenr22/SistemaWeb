@@ -42,6 +42,11 @@
                 </div>
                 <div class="contraseña">
                     <label for="contraseña"><b>Contraseña:</b> </label>
+                    <div class="box-eye">
+                        <button type="button">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
                     <input id="contraseña" name="Ncontra" class="form-control" type="password" placeholder="Ingrese su contraseña">
                 </div>
                 <div class="checkbox">
