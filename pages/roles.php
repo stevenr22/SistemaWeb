@@ -32,21 +32,27 @@
                                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                             <thead class="bg-warning">
                                                 <tr>
-                                                    <th>#</th>
                                                     <th>Rol</th>
                                                     <th>Descripción</th>
                                                     <th>Acciones</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            
+                                            <?php
+                                            $sql = $db->query("SELECT * FROM roles WHERE Activo=1");
+                                            while($arreglo = $sql->fetch_array()){
+                                            ?>
 
                                                 <tr class="odd gradeX">
-                                                    
+                                                    <td><?php echo $arreglo['Nombre_rol'] ?></td>
+                                                    <td><?php echo $arreglo['Descripcion'] ?></td>
+                                                    <td class="center">
+                                                        <button type="button" class="btn btn-warning" onclick="modalcito_aparece('<?php echo $arreglo['Id_rol']; ?>','<?php echo $arreglo['Nombre_rol']; ?>','<?php echo $arreglo['Descripcion']; ?>')">ACTUALIZAR</button>
+                                                        <button type="button" class="btn btn-danger" onclick="eliminar('<?php echo $arreglo['emp_id']; ?>')">ELIMINAR</button>
+                                                    </td>
                                                 </tr>
 
-                                            
-
+                                            <?php } ?>
                                             </tbody>
                                         </table>
                                     </div>
@@ -128,13 +134,11 @@
                 });
             });
 
-            function modalcito_aparece(id, nom, ced, cor, fnaci){
+            function modalcito_aparece(id, nom, des){
                 $("#modalcito").modal("show");
                 $("#Enombre").val(nom);
-                $("#idregistro").val(id);
-                $("#Eced").val(ced);
-                $("#Ecorreo").val(cor);
-                $("#Efnac").val(fnaci);
+                $("#idRol").val(id);
+                $("#Edes").val(des);
             }
 
             function modalcito_seesconde(){
@@ -146,7 +150,7 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header bg-info">
-                        <div class="modal-title">EDITAR REGISTROS</div>
+                        <div class="modal-title">Actualizar rol</div>
                     </div>
                     <div class="modal-body">
                         <form role="form" method="post" action="editaris.php" id="formito2">
@@ -157,45 +161,11 @@
                             </div>
 
                             <div class="form-group">
-                                <label>Cédula</label>
-                                <input class="form-control" type="text" name="ced" id="Eced" placeholder="Ingrese cédula">
+                                <label>Descripción</label>
+                                <input class="form-control" type="text" name="des" id="Edes" placeholder="Ingrese cédula">
                             </div>
 
-                            <div class="form-group">
-                                <label>Correo</label>
-                                <input class="form-control" type="email" name="correo" id="Ecorreo" placeholder="Ingrese el correo">
-                            </div>
-
-                            <div class="form-group">
-                                <label>Dirección</label>
-                                <input class="form-control" type="text" name="dir" id="Edir" placeholder="Ingrese la dirección">
-                            </div>
-
-                            <div class="form-group">
-                                <label>Ciudad</label>
-                                <select class="form-control" name="ciudad" id="Eciudad">
-                                    <option value="1">GYE</option>
-                                    <option value="2">UIO</option>
-                                    <option value="3">CUM</option>
-                                    <option value="4">ESM</option>
-                                    <option value="5">MAN</option>
-                                </select>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Usuario</label>
-                                        <input class="form-control" type="text" name="usu" id="Eusu" placeholder="Ingrese el usuario">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Contraseña</label>
-                                        <input class="form-control" type="password" name="pass" id="Epass" placeholder="Ingrese la contraseña">
-                                    </div>
-                                </div>
-                            </div>
+                            
 
                             <button type="submit" class="btn btn-success">Guardar Registro</button>
                             <button type="reset" class="btn btn-info">Limpiar Datos</button>

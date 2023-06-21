@@ -4,25 +4,45 @@ include("../bd/conexion.php");
 $db = DataBase::connect();
 date_default_timezone_set("America/Guayaquil");
 
-/* $usu = $_POST["Nombre"];
-$contra = $_POST["des"];
+$rol = $_POST["nombre"];
+$des = $_POST["des"];
 
-$consulta = "select * from usuario where nomb_usuario='$usu' and contraseña='$contra'";
-$resultado = mysqli_query($db,$consulta);
 
-$filas=mysqli_num_rows($resultado);
-if ($filas) {
-    header("location:index.php");
+$sql = mysqli_query($db,"SELECT Nombre_rol FROM roles where Nombre_rol='$rol' and Activo ");
+
+$filas=mysqli_num_rows($sql);
+if ($filas<=0) {
+    if($registrar = mysqli_query($db, "INSERT INTO roles (Nombre_rol, Descripcion) VALUES ('$rol','$des')")){
+        ?>
+        <?php
+        include("roles.php");
+        ?>
+        <script>
+            Swal.fire({
+            title: "Registro exitoso!",
+            icon: 'success',
+            text: 'Rol creado existosamente!'
+            
+        })
+        </script>
+    
+        <?php
+    }
 } else {
     ?>
     <?php
-    include("login.php");
+    include("roles.php");
     ?>
-    <div class="alert alert-danger">
-        <b>ERROR EN LA AUTENTIFICACIÓN</b>
-    </div>
+    <script>
+        Swal.fire({
+        title: "Ocurrió in error!",
+        icon: 'error',
+        text: 'El rol ya se encuentra registrado!'
+        
+    })
+    </script>
  
     <?php
 }
-mysqli_free_result($resultado);
+/* mysqli_free_result($sql);
 mysqli_close($db); */
