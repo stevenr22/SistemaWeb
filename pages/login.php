@@ -56,7 +56,7 @@
                     </label>
                 </div>
             
-                <button type="submit" class="btn btn-success mb-2">Iniciar</button>
+                <button type="submit" name="btningreso" class="btn btn-success mb-2">Iniciar</button>
                 <br> 
                 <a id="efecto" href="../pages/registro.php">
                     <b>No tiene cuenta? Registrate</b>

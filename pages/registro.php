@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -32,10 +31,10 @@
         <div class="card col-lg-3">
             <div class="header">
                 <img src="../img/usuario.png">
-                <h1><b>Registrar</b></h1>
+           
               </div>
            
-            <form method="post" action="validarregistro.php">
+            <form method="post" action="revisarRegistro.php">
                 <div class="form-group">
                     <label for="Nusuario"><b>Usuario:</b> </label>
                     <input id="usuario" name="Nusu" class="form-control" type="text" placeholder="Ingrese su usuario">
@@ -49,7 +48,7 @@
                     </div>
                     <input id="contraseña" name="Ncontra" class="form-control" type="password" placeholder="Ingrese su contraseña">
                 </div>
-                <div class="form-group">
+                <!--div class="form-group">
                     <label for="contraseña"><b>Repita la contraseña:</b> </label>
                     <div class="box-eye">
                         <button type="button" onclick="mostrarcontraseña('contraseña2','eyecontra2')">
@@ -57,7 +56,7 @@
                         </button>
                     </div>
                     <input id="contraseña2" name="confirmarContraseña" class="form-control" type="password" placeholder="Ingrese su contraseña">
-                </div>
+                </div-->
                 <div class="form-group">
                     <label for="nombre"><b>Nombres:</b> </label>
                     <input id="nombre" name="Nnombre" class="form-control" type="text" placeholder="Ingrese sus nombres">
@@ -80,9 +79,7 @@
                     <b>Tiene cuenta? Inicia</b>
                 </a>
             </form>
-            <?php
-            include("validarregistro.php");
-            ?>
+
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
