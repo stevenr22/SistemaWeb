@@ -41,8 +41,8 @@
                     <label for="usuario"><b>Usuario:</b> </label>
                     <input id="usuario" name="Nusu" class="form-control" type="text" placeholder="Ingrese su usuario">
                 </div>
-                <div class="contraseña">
-                    <label for="contraseña"><b>Contraseña:</b> </label>
+                <div class="form-group">
+                    <label for="contraseña"><b>Contraseña:</b></label>
                     <div class="box-eye">
                         <button type="button" onclick="mostrarcontraseña('contraseña','eyecontra')">
                             <i id="eyecontra" class="fa-solid fa-eye changecontra"></i>
