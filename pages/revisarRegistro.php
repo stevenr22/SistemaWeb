@@ -32,7 +32,7 @@ if (empty($usu) || empty($contra) || empty($nomb) || empty($ape)) {
     VALUES ('$usu', '$contra', '$nomb','$ape')";
     $resultado =  mysqli_query($db,$sql);
     if($resultado) {
-        // Iserción correcta
+        // Inserción correcta
         ?>
         <?php
         include("registro.php");
