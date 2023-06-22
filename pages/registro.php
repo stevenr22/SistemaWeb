@@ -31,6 +31,7 @@
         <div class="card col-lg-3">
             <div class="header">
                 <img src="../img/usuario.png">
+                <h1><b>Registrar datos</b></h1>
            
               </div>
            
