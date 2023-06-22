@@ -4,9 +4,25 @@ include("../bd/conexion.php");
 $db = DataBase::connect();
 date_default_timezone_set("America/Guayaquil");
 
+
 $usu = $_POST["Nusu"];
 $contra = $_POST["Ncontra"];
-if (empty($usu) || empty($contra)) {
+
+$band = false;
+//FALTA REALIZAR EL LOGIN CON LOS RESPECTIVOS ROLES
+$sentencia = "select * from usuario where nomb_usuario='$usu' and contraseña='$contra'";
+$respuesta = $db->query($sentencia);
+while($fila = $respuesta->fetch_array()){
+    $_SESSION['DBid'] = $fila['id_usuario'];
+    $_SESSION['DBnombusu'] = $fila['nomb_usuario'];
+    $_SESSION['DBnombre'] = $fila['nombre'];
+    $_SESSION['DBapellido'] = $fila['apellido'];
+ 
+    $band = true;
+}
+
+if ($band) header("location:index.php"); //SI TODO ESTA BIEN VAL DASHBOARD
+elseif(empty($usu) || empty($contra)){ //PERMITE VERIFICAR SI LOS CAMPOS ESTAN VACIOS
     ?>
     <?php
     include("login.php");
@@ -19,16 +35,9 @@ if (empty($usu) || empty($contra)) {
     </script>
     
     <?php
-} else {
-    $consulta = "select * from usuario where nomb_usuario='$usu' and contraseña='$contra'";
-    $resultado = mysqli_query($db,$consulta);
 
-    $filas=mysqli_num_rows($resultado);
-    if ($filas>0) {
-        header("location:index.php");
-
-    }else{
-        ?>
+}else{ //VERIFICA SI LOS DATOS ESTAN INCORRECTOS
+    ?>
     <?php
     include("login.php");
     ?>
@@ -40,10 +49,6 @@ if (empty($usu) || empty($contra)) {
     </script>
     
     <?php
-    }
 }
 
-mysqli_free_result($resultado);
-mysqli_close($db);
-
-
+?>

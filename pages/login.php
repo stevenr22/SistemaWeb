@@ -37,6 +37,8 @@
                 <h1><b>Iniciar sesión</b></h1>
             </div>
             <form method="post" action="revisarlogin.php">
+            
+               
                 <div class="form-group">
                     <label for="usuario"><b>Usuario:</b> </label>
                     <input id="usuario" name="Nusu" class="form-control" type="text" placeholder="Ingrese su usuario">
@@ -55,7 +57,7 @@
                         <input name="remember" type="checkbox" value="Remember Me">Recuerdame
                     </label>
                 </div>
-            
+              
                 <button type="submit" name="btningreso" class="btn btn-success mb-2">Iniciar</button>
                 <br> 
                 <a id="efecto" href="../pages/registro.php">
