@@ -11,12 +11,6 @@ date_default_timezone_set("America/Guayaquil");
         <a class="navbar-brand" href="index.php">Mango Production</a>
     </div>
 
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </button>
 
 
     <ul class="nav navbar-right navbar-top-links">
@@ -32,11 +26,22 @@ date_default_timezone_set("America/Guayaquil");
                 
                 <b class="caret"></b>
             </a>
+
+
+
+
+             
             <ul class="dropdown-menu dropdown-user">
-                <li><a href="#"><i class="fa fa-user fa-fw"></i> Perfil</a>
+                <li><a href="../pages/perfil.php"><i class="fa fa-user fa-fw"></i> Perfil</a>
                 </li>
 
             </ul>
+
+
+
+
+
+
         </li>
     </ul>
     <!-- /.navbar-top-links -->
@@ -62,7 +67,7 @@ date_default_timezone_set("America/Guayaquil");
                 </li>
 
                 <li>
-                    <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                    <a href="forms.php"><i class="fa fa-edit fa-fw"></i> Formularios</a>
                 </li>
 
                

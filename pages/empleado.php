@@ -1,3 +1,7 @@
+<?php
+session_start();
+if(isset($_SESSION['DBid'])==false) header("location:../index.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -15,7 +19,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1 class="page-header">Empleado</h1>
+                            <h1 class="page-header">EMPLEADOS REGISTRADOS</h1>
                         </div>
                         <!-- /.col-lg-12 -->
                     </div>
@@ -24,70 +28,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="panel panel-success">
-                                <div class="panel-heading">
-                                    Basic Form Elements
-                                </div>
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <form role="form" method="post" action="guardaris.php" id="formito">
-
-                                                <div class="form-group">
-                                                    <label>Nombre</label>
-                                                    <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre y el apellido">
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label>Cédula</label>
-                                                    <input class="form-control" type="text" name="ced" id="ced" placeholder="Ingrese cédula">
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label>Correo</label>
-                                                    <input class="form-control" type="email" name="correo" id="correo" placeholder="Ingrese el correo">
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label>Dirección</label>
-                                                    <input class="form-control" type="text" name="dir" id="dir" placeholder="Ingrese la dirección">
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label>Ciudad</label>
-                                                    <select class="form-control" name="ciudad" id="ciudad">
-                                                        <option value="1">GYE</option>
-                                                        <option value="2">UIO</option>
-                                                        <option value="3">CUM</option>
-                                                        <option value="4">ESM</option>
-                                                        <option value="5">MAN</option>
-                                                    </select>
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Usuario</label>
-                                                            <input class="form-control" type="text" name="usu" id="usu" placeholder="Ingrese el usuario">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Contraseña</label>
-                                                            <input class="form-control" type="password" name="pass" id="pass" placeholder="Ingrese la contraseña">
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <button type="submit" class="btn btn-success">Guardar Registro</button>
-                                                <button type="reset" class="btn btn-info">Limpiar Datos</button>
-                                            </form>
-                                        </div>
-                                        <!-- /.col-lg-6 (nested) -->
-
-
-                                    </div>
-                                    <!-- /.row (nested) -->
-                                </div>
+                                
                                 <!-- /.panel-body -->
                             </div>
                             <!-- /.panel -->
@@ -102,7 +43,7 @@
                         <div class="col-lg-12">
                             <div class="panel panel-danger">
                                 <div class="panel-heading">
-                                    Empleados registrados
+                                    TABLA DE DATOS
                                 </div>
                                 <!-- /.panel-heading -->
                                 <div class="panel-body">
@@ -110,28 +51,33 @@
                                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                             <thead class="bg-warning">
                                                 <tr>
+                                                    <th>ID</th>
                                                     <th>Nombre</th>
-                                                    <th>Cédula</th>
-                                                    <th>Correo</th>
-                                                    <th>Fecha Nacimiento</th>
-                                                    <th>Acciones</th>
+                                                    <th>Apellido</th>
+                                                    <th>Nombre de usuario</th>
+                                                    <th>Rol</th>
+                                                    <th>Opciones</th>
+                                               
                                                 </tr>
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $sentencia = "select * from empleado where estado=1";
+                                            $sentencia = "select * from usuario where estado=1";
                                             $respuesta = $db->query($sentencia);
                                             while($arreglo = $respuesta->fetch_array()){
                                             ?>
 
                                                 <tr class="odd gradeX">
+                                                    <td><?php echo $arreglo['id_usuario'] ?></td>
                                                     <td><?php echo $arreglo['nombre'] ?></td>
-                                                    <td><?php echo $arreglo['cedula'] ?></td>
-                                                    <td><?php echo $arreglo['correo'] ?></td>
-                                                    <td class="center"><?php echo $arreglo['fecha_nac'] ?></td>
+                                                    <td><?php echo $arreglo['apellido'] ?></td>
+                                                    <td><?php echo $arreglo['nomb_usuario'] ?></td>
+                                                    <td><?php echo $arreglo['rol'] ?></td>
+
+                                                  
                                                     <td class="center">
-                                                        <button type="button" class="btn btn-warning" onclick="modalcito_aparece('<?php echo $arreglo['emp_id']; ?>','<?php echo $arreglo['nombre']; ?>','<?php echo $arreglo['cedula']; ?>', '<?php echo $arreglo['correo']; ?>', '<?php echo $arreglo['fecha_nac']; ?>')">ACTUALIZAR</button>
-                                                        <button type="button" class="btn btn-danger" onclick="eliminar('<?php echo $arreglo['emp_id']; ?>')">ELIMINAR</button>
+                                                        <button type="button" class="btn btn-warning" onclick="modalcito_aparece('<?php echo $arreglo['id_usuario']; ?>','<?php echo $arreglo['nombre']; ?>','<?php echo $arreglo['apellido']; ?>', '<?php echo $arreglo['nomb_usuario']; ?>','<?php echo $arreglo['rol']; ?>')">ACTUALIZAR</button>
+                                                        <button type="button" class="btn btn-danger" onclick="eliminar('<?php echo $arreglo['id_usuario']; ?>')">ELIMINAR</button>
                                                     </td>
                                                 </tr>
 
@@ -183,13 +129,13 @@
                 });
             });
 
-            function modalcito_aparece(id, nom, ced, cor, fnaci){
+            function modalcito_aparece(id, nom, ape, nom_usu,rol){
                 $("#modalcito").modal("show");
-                $("#Enombre").val(nom);
                 $("#idregistro").val(id);
-                $("#Eced").val(ced);
-                $("#Ecorreo").val(cor);
-                $("#Efnac").val(fnaci);
+                $("#Nnom").val(nom);
+                $("#Nape").val(ape);
+                $("#Nnom_usu").val(nom_usu);
+                $("#Nrol").val(rol);
             }
 
             function modalcito_seesconde(){
@@ -207,50 +153,28 @@
                         <form role="form" method="post" action="editaris.php" id="formito2">
 
                             <div class="form-group">
-                                <label>Nombre</label>
-                                <input class="form-control" type="text" name="nombre" id="Enombre" placeholder="Ingrese el nombre y el apellido">
+                                <label>Nombres</label>
+                                <input class="form-control" type="text" name="Nnom" id="Nnom" readonly value="Valor no editable">
                             </div>
 
                             <div class="form-group">
-                                <label>Cédula</label>
-                                <input class="form-control" type="text" name="ced" id="Eced" placeholder="Ingrese cédula">
+                                <label>Apellidos</label>
+                                <input class="form-control" type="text" name="Nape" id="Nape" readonly value="Valor no editable">
                             </div>
 
                             <div class="form-group">
-                                <label>Correo</label>
-                                <input class="form-control" type="email" name="correo" id="Ecorreo" placeholder="Ingrese el correo">
+                                <label>Nombre de usuario</label>
+                                <input class="form-control" type="text" name="Nnom_usu" id="Nnom_usu" readonly value="Valor no editable">
                             </div>
 
                             <div class="form-group">
-                                <label>Dirección</label>
-                                <input class="form-control" type="text" name="dir" id="Edir" placeholder="Ingrese la dirección">
+                                <label>Rol</label>
+                                <input class="form-control" type="text" name="Nrol" id="Nrol"readonly value="Valor no editable">
                             </div>
 
-                            <div class="form-group">
-                                <label>Ciudad</label>
-                                <select class="form-control" name="ciudad" id="Eciudad">
-                                    <option value="1">GYE</option>
-                                    <option value="2">UIO</option>
-                                    <option value="3">CUM</option>
-                                    <option value="4">ESM</option>
-                                    <option value="5">MAN</option>
-                                </select>
-                            </div>
+                            
 
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Usuario</label>
-                                        <input class="form-control" type="text" name="usu" id="Eusu" placeholder="Ingrese el usuario">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Contraseña</label>
-                                        <input class="form-control" type="password" name="pass" id="Epass" placeholder="Ingrese la contraseña">
-                                    </div>
-                                </div>
-                            </div>
+                            
 
                             <button type="submit" class="btn btn-success">Guardar Registro</button>
                             <button type="reset" class="btn btn-info">Limpiar Datos</button>
