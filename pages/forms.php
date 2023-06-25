@@ -53,8 +53,8 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
 
         <!-- Morris Charts JavaScript -->
         <script src="../js/raphael.min.js"></script>
-        <script src="../js/morris.min.js"></script>
-        <script src="../js/morris-data.js"></script>
+        <!-- <script src="../js/morris.min.js"></script>
+        <script src="../js/morris-data.js"></script> -->
 
         <!-- Custom Theme JavaScript -->
         <script src="../js/startmin.js"></script>

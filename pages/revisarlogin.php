@@ -17,6 +17,8 @@ while($fila = $respuesta->fetch_array()){
     $_SESSION['DBnombusu'] = $fila['nomb_usuario'];
     $_SESSION['DBnombre'] = $fila['nombre'];
     $_SESSION['DBapellido'] = $fila['apellido'];
+    $_SESSION['MensajeError'] = "";
+    $_SESSION['MensajeExito'] = "";
  
     $band = true;
 }

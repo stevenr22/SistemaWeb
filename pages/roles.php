@@ -52,7 +52,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                                     <td><?php echo $arreglo['Descripcion'] ?></td>
                                                     <td class="center">
                                                         <button type="button" class="btn btn-warning" onclick="modalcito_aparece('<?php echo $arreglo['Id_rol']; ?>','<?php echo $arreglo['Nombre_rol']; ?>','<?php echo $arreglo['Descripcion']; ?>')">ACTUALIZAR</button>
-                                                        <button type="button" class="btn btn-danger" onclick="eliminar('<?php echo $arreglo['emp_id']; ?>')">ELIMINAR</button>
+                                                        <button type="button" class="btn btn-danger" onclick="eliminar('<?php echo $arreglo['Id_rol']; ?>','<?php echo $arreglo['Nombre_rol']; ?>')">ELIMINAR</button>
                                                     </td>
                                                 </tr>
 
@@ -129,6 +129,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
 
         <!-- Custom Theme JavaScript -->
         <script src="../js/startmin.js"></script>
+        <?php include("partials/scripts.php"); ?>
 
         <!-- Page-Level Demo Scripts - Tables - Use for reference -->
         <script>
@@ -143,10 +144,45 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                 $("#Enombre").val(nom);
                 $("#idRol").val(id);
                 $("#Edes").val(des);
+                console.log($("#idRol").val())
             }
 
             function modalcito_seesconde(){
                 $("#modalcito").modal("hide");
+            }
+            function eliminar(id, rol){
+                swal.fire({
+                    title:'Está seguro?',
+                    icon:'warning',
+                    text:'Desea eliminar el rol:'+rol,
+                    confirmButtonText:'Sí, Eliminar',
+                    showDenyButton: true,
+                    denyButtonText: `Cancelar`,
+                }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url:'DeleteRol.php',
+                            type: 'POST',
+                            data:{id,},
+                            success: function(response){
+                                Swal.fire({
+                                    title:'Eiminado',
+                                    icon:'success',
+                                    text:'Desea eliminar el rol:'+rol,
+                                    confirmButtonText:'ok',
+                                }).then((result) => {
+                                /* Read more about isConfirmed, isDenied below */
+                                    
+                                    location.reload(); // Recarga la página actual
+                                    
+                                })
+                            }
+                        });
+                    } else if (result.isDenied) {
+                        Swal.fire('No se ha eliminado el rol', '', 'info')
+                    }
+                })
             }
         </script>
 
@@ -157,8 +193,8 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                         <div class="modal-title">Actualizar rol</div>
                     </div>
                     <div class="modal-body">
-                        <form role="form" method="post" action="editaris.php" id="formito2">
-
+                        <form role="form" method="post" action="EditRol.php" id="formito2">
+                        <input id="idRol" name="idRol" hidden>
                             <div class="form-group">
                                 <label>Nombre</label>
                                 <input class="form-control" type="text" name="nombre" id="Enombre" placeholder="Ingrese el nombre y el apellido">
@@ -181,8 +217,5 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                 </div>
             </div>
         </div>
-
-
-
     </body>
 </html>
