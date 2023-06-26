@@ -33,7 +33,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                 <!-- /.panel-heading -->
                                 <div class="panel-body">
                                     <div class="table-responsive">
-                                        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                        <table class="table datatable table-striped table-bordered table-hover" id="dataTables-example">
                                             <thead class="bg-warning">
                                                 <tr>
                                                     <th>Rol</th>
@@ -134,9 +134,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
         <!-- Page-Level Demo Scripts - Tables - Use for reference -->
         <script>
             $(document).ready(function() {
-                $('#dataTables-example').DataTable({
-                        responsive: true
-                });
+                
             });
 
             function modalcito_aparece(id, nom, des){
