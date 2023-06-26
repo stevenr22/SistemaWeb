@@ -26,10 +26,11 @@ if (empty($usu) || empty($contra) || empty($nomb) || empty($ape)) {
     
     <?php
 }else{
-
+    $get_idRol = mysqli_query($db,"SELECT Id_rol FROM roles WHERE Nombre_rol= 'Empleado'");
+    $id = mysqli_fetch_array($get_idRol);
     // Insertamos los datos en la base de datos
-    $sql = "INSERT INTO usuario (nomb_usuario, contraseña, nombre, apellido) 
-    VALUES ('$usu', '$contra', '$nomb','$ape')";
+    $sql = "INSERT INTO usuario (nomb_usuario, contraseña, nombre, apellido,Id_rol) 
+    VALUES ('$usu', '$contra', '$nomb','$ape','$id[0]')";
     $resultado =  mysqli_query($db,$sql);
     if($resultado) {
         // Inserción correcta

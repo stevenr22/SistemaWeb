@@ -62,7 +62,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $sentencia = "select * from usuario where estado=1";
+                                            $sentencia = "SELECT u.nomb_usuario, u.nombre, u.apellido, r.Nombre_rol FROM usuario as u , roles as r WHERE u.Id_rol=r.Id_rol and r.Activo AND u.Activo";
                                             $respuesta = $db->query($sentencia);
                                             while($arreglo = $respuesta->fetch_array()){
                                             ?>
@@ -72,7 +72,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                                     <td><?php echo $arreglo['nombre'] ?></td>
                                                     <td><?php echo $arreglo['apellido'] ?></td>
                                                     <td><?php echo $arreglo['nomb_usuario'] ?></td>
-                                                    <td><?php echo $arreglo['rol'] ?></td>
+                                                    <td><?php echo $arreglo['Nombre_rol'] ?></td>
 
                                                   
                                                     <td class="center">

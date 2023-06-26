@@ -10,13 +10,13 @@ $contra = $_POST["Ncontra"];
 
 $band = false;
 //FALTA REALIZAR EL LOGIN CON LOS RESPECTIVOS ROLES
-$sentencia = "select * from usuario where nomb_usuario='$usu' and contraseña='$contra'";
+$sentencia = "SELECT u.id_usuario, u.nombre, u.apellido, r.Nombre_rol FROM usuario  as u , roles as r where u.nomb_usuario='$usu' and u.contraseña='$contra'and u.Activo";
 $respuesta = $db->query($sentencia);
 while($fila = $respuesta->fetch_array()){
     $_SESSION['DBid'] = $fila['id_usuario'];
-    $_SESSION['DBnombusu'] = $fila['nomb_usuario'];
     $_SESSION['DBnombre'] = $fila['nombre'];
     $_SESSION['DBapellido'] = $fila['apellido'];
+    $_SESSION['rol'] = $fila['Nombre_rol'];
     $_SESSION['MensajeError'] = "";
     $_SESSION['MensajeExito'] = "";
  
