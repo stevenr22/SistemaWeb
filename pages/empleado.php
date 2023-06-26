@@ -62,7 +62,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $sentencia = "SELECT u.nomb_usuario, u.nombre, u.apellido, r.Nombre_rol FROM usuario as u , roles as r WHERE u.Id_rol=r.Id_rol and r.Activo AND u.Activo";
+                                            $sentencia = "SELECT u.id_usuario, u.nomb_usuario, u.nombre, u.apellido, r.Nombre_rol FROM usuario as u , roles as r WHERE u.Id_rol=r.Id_rol and r.Activo AND u.Activo";
                                             $respuesta = $db->query($sentencia);
                                             while($arreglo = $respuesta->fetch_array()){
                                             ?>
@@ -76,7 +76,7 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
 
                                                   
                                                     <td class="center">
-                                                        <button type="button" class="btn btn-warning" onclick="modalcito_aparece('<?php echo $arreglo['id_usuario']; ?>','<?php echo $arreglo['nombre']; ?>','<?php echo $arreglo['apellido']; ?>', '<?php echo $arreglo['nomb_usuario']; ?>','<?php echo $arreglo['rol']; ?>')">ACTUALIZAR</button>
+                                                        <button type="button" class="btn btn-warning" onclick="modalcito_aparece('<?php echo $arreglo['id_usuario']; ?>','<?php echo $arreglo['nombre']; ?>','<?php echo $arreglo['apellido']; ?>', '<?php echo $arreglo['nomb_usuario']; ?>','<?php echo $arreglo['Nombre_rol']; ?>')">ACTUALIZAR</button>
                                                         <button type="button" class="btn btn-danger" onclick="eliminar('<?php echo $arreglo['id_usuario']; ?>')">ELIMINAR</button>
                                                     </td>
                                                 </tr>
@@ -141,6 +141,9 @@ if(isset($_SESSION['DBid'])==false) header("location:../index.php");
             function modalcito_seesconde(){
                 $("#modalcito").modal("hide");
             }
+            
+
+
         </script>
 
         <div id="modalcito" class="modal" aria-hidden="true" tabindex="-1">
