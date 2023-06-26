@@ -64,7 +64,7 @@ if (isset($_SESSION['DBid']) == false) header("location:../index.php");
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $sentencia = "SELECT u.nomb_usuario, u.nombre, u.apellido, r.Nombre_rol FROM usuario as u , roles as r WHERE u.Id_rol=r.Id_rol and r.Activo AND u.Activo";
+                                            $sentencia = "SELECT u.id_usuario, u.nomb_usuario, u.nombre, u.apellido, r.Nombre_rol, r.Id_rol FROM usuario as u , roles as r WHERE u.Id_rol=r.Id_rol and r.Activo AND u.Activo";
                                             $respuesta = $db->query($sentencia);
                                             while ($arreglo = $respuesta->fetch_array()) {
                                             ?>
@@ -104,60 +104,20 @@ if (isset($_SESSION['DBid']) == false) header("location:../index.php");
         </div>
         <!-- /#page-wrapper -->
 
-        </div>
-        <!-- /#wrapper -->
-
-        <!-- jQuery -->
-        <script src="../js/jquery.min.js"></script>
-
-        <!-- Bootstrap Core JavaScript -->
-        <script src="../js/bootstrap.min.js"></script>
-
-        <!-- Metis Menu Plugin JavaScript -->
-        <script src="../js/metisMenu.min.js"></script>
-
-        <!-- DataTables JavaScript -->
-        <script src="../js/dataTables/jquery.dataTables.min.js"></script>
-        <script src="../js/dataTables/dataTables.bootstrap.min.js"></script>
-
-        <!-- Custom Theme JavaScript -->
-        <script src="../js/startmin.js"></script>
-
-        <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-        <script>
-            $(document).ready(function() {
-                $('#dataTables-example').DataTable({
-                        responsive: true
-                });
-            });
-
-            function modalcito_aparece(id, nom, ape, nom_usu,rol){
-                $("#modalcito").modal("show");
-                $("#idregistro").val(id);
-                $("#Nnom").val(nom);
-                $("#Nape").val(ape);
-                $("#Nnom_usu").val(nom_usu);
-                $("#Nrol").val(rol);
-            }
-
-            function modalcito_seesconde(){
-                $("#modalcito").modal("hide");
-            }
-        </script>
-
-        <div id="modalcito" class="modal" aria-hidden="true" tabindex="-1">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header bg-info">
-                        <div class="modal-title">EDITAR REGISTROS</div>
-                    </div>
-                    <div class="modal-body">
-                        <form role="form" method="post" action="editaris.php" id="formito2">
-
-                            <div class="form-group">
-                                <label>Nombres</label>
-                                <input class="form-control" type="text" name="Nnom" id="Nnom" readonly value="Valor no editable">
-                            </div>
+    </div>
+    <div id="modalcito" class="modal" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-info">
+                    <div class="modal-title">Actualizar Rol</div>
+                </div>
+                <div class="modal-body">
+                    <form role="form" method="post" action="editaris.php" id="formito2">
+                        <input type="hidden" id="id_Emp" name="id_Emp">
+                        <div class="form-group">
+                            <label>Nombres</label>
+                            <input class="form-control" type="text" name="Nnom" id="Nnom" readonly value="Valor no editable">
+                        </div>
 
                         <div class="form-group">
                             <label>Apellidos</label>
