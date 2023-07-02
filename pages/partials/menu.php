@@ -10,6 +10,15 @@ date_default_timezone_set("America/Guayaquil");
     <div class="navbar-header">
         <a class="navbar-brand" href="index.php">Mango Production</a>
     </div>
+
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Botón de navegacion</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+
+
     <ul class="nav navbar-right navbar-top-links">
        
         <li class="dropdown">
