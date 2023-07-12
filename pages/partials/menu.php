@@ -69,19 +69,36 @@ date_default_timezone_set("America/Guayaquil");
                     <a href="forms.php"><i class="fa fa-edit fa-fw"></i> Formularios</a>
                 </li>
                 <li>
-                        <a href="#"><i class="fa fa-user fa-fw"></i> Cultivo <span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="empleado.php"> Planificación</a>
-                            </li>
-                            <li>
-                                <a href="empleado.php"> Produción</a>
-                            </li>
-                            <li>
-                                <a href="empleado.php"> Cosecha</a>
-                            </li>
-                        </ul>
-                    </li>
+                    <a href="#"><i class="fa fa-leaf fa-fw"></i> Cultivo <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="empleado.php"> Planificación</a>
+                        </li>
+                        <li>
+                            <a href="empleado.php"> Produción</a>
+                        </li>
+                        <li>
+                            <a href="empleado.php"> Cosecha</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-file fa-fw"></i> Reportes <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="empleado.php"> Reportes de Planificación</a>
+                        </li>
+                        <li>
+                            <a href="empleado.php"> Reportes de Produción</a>
+                        </li>
+                        <li>
+                            <a href="empleado.php"> Reportes de Cosecha</a>
+                        </li>
+                    </ul>
+                </li>
+
+
                 <li>
                     <a href="../pages/cerrar_sesion.php"><i class="fa fa-close fa-fw"></i> Cerrar Sesión</a>
                 </li>
