@@ -11,7 +11,7 @@ date_default_timezone_set("America/Guayaquil");
 $sql = "SELECT Id_rol, Nombre_rol FROM roles WHERE Activo";
 
 $result = $db->query($sql);
-
+//VERIFICAR
 // Verificar si se encontraron registros
 if ($result->num_rows > 0) {
     // Array para almacenar los resultados
