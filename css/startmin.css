@@ -57,12 +57,12 @@ body {
 }
 
 .navbar-top-links>li>a {
-    color: #999;
+    color: rgb(255, 255, 255);
 }
 
 .navbar-top-links>li>a:hover, .navbar-top-links>li>a:focus, .navbar-top-links>.open>a, .navbar-top-links>.open>a:hover, .navbar-top-links>.open>a:focus {
     color: #fff;
-    background-color: #222;
+    background-color: #009c8c;
 }
 
 .navbar-top-links .dropdown-menu li {
