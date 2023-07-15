@@ -43,6 +43,7 @@
                     <label for="usuario"><b>Usuario:</b> </label>
                     <input id="usuario" name="Nusu" class="form-control" type="text" placeholder="Ingrese su usuario">
                 </div>
+                
                 <div class="form-group">
                     <label for="contraseña"><b>Contraseña:</b></label>
                     <div class="box-eye">
