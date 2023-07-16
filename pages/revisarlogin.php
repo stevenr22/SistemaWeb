@@ -9,7 +9,7 @@ $usu = $_POST["Nusu"];
 $contra = $_POST["Ncontra"];
 
 $band = false;
-//FALTA REALIZAR EL LOGIN CON LOS RESPECTIVOS ROLES
+
 $sentencia = "SELECT u.id_usuario, u.nombre, u.apellido, r.Nombre_rol FROM usuario  as u , roles as r where (r.Id_rol=u.Id_rol)AND (u.nomb_usuario='$usu' and u.contraseña='$contra'and u.Activo)";
 $respuesta = $db->query($sentencia);
 while($fila = $respuesta->fetch_array()){
